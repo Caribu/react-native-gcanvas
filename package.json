@@ -33,16 +33,27 @@
     "@flyskywhy/react-native-browser-polyfill": "^1.0.1"
   },
   "private": false,
-  "funding": [{
-    "type": "individual",
-    "url": "https://Alipay/flyskywhy@gmail.com"
-  },{
-    "type": "individual",
-    "url": "https://EthAddress/0xd02fa2738dcbba988904b5a9ef123f7a957dbb3e"
-  }],
+  "funding": [
+    {
+      "type": "individual",
+      "url": "https://Alipay/flyskywhy@gmail.com"
+    },
+    {
+      "type": "individual",
+      "url": "https://EthAddress/0xd02fa2738dcbba988904b5a9ef123f7a957dbb3e"
+    }
+  ],
   "license": "Apache",
   "bugs": {
     "url": "https://github.com/flyskywhy/react-native-gcanvas/issues"
   },
-  "homepage": "https://github.com/flyskywhy/react-native-gcanvas#readme"
+  "homepage": "https://github.com/flyskywhy/react-native-gcanvas#readme",
+  "devDependencies": {
+    "@types/jest": "^26.0.24",
+    "@types/node": "^16.4.12",
+    "@types/react": "^17.0.15",
+    "@types/react-native": "^0.64.12",
+    "@types/react-test-renderer": "^17.0.1",
+    "typescript": "^4.3.5"
+  }
 }
