@@ -1,16 +1,18 @@
 import React from "react";
 import GCanvasView from "./GCanvasComponent";
 
-const UniversalCanvasView = ({
-  onCanvasCreate,
-  onTouchStart,
-  onTouchMove,
-  onTouchEnd,
-  onMouseDown, // doesn't make sense for mobile
-  onMouseMove, // doesn't make sense for mobile
-  onMouseUp, // doesn't make sense for mobile
-  style,
-}) => {
+const UniversalCanvasView = React.memo((props: any) => {
+  const {
+    onCanvasCreate,
+    onTouchStart,
+    onTouchMove,
+    onTouchEnd,
+    onMouseDown, // doesn't make sense for mobile
+    onMouseMove, // doesn't make sense for mobile
+    onMouseUp, // doesn't make sense for mobile
+    style,
+  } = props;
+
   return (
     <GCanvasView
       onCanvasCreate={onCanvasCreate}
@@ -20,6 +22,6 @@ const UniversalCanvasView = ({
       style={style}
     />
   );
-};
+});
 
 export default UniversalCanvasView;

@@ -1,8 +1,8 @@
 import React from "react";
-import { Platform } from "react-native";
 import UniversalCanvasView from "./UniversalCanvasView";
 
 export type UniversalCanvasProps = {
+  onCanvasCreate: (canvas) => void;
   onTouchStart: (evt) => void;
   onTouchMove: (evt) => void;
   onTouchEnd: (evt) => void;
@@ -12,30 +12,17 @@ export type UniversalCanvasProps = {
   style;
 };
 
-const UniversalCanvas = ({
-  onTouchStart,
-  onTouchMove,
-  onTouchEnd,
-  onMouseDown,
-  onMouseMove,
-  onMouseUp,
-  style,
-}: UniversalCanvasProps) => {
-  let canvas;
-  let ctx;
-
-  const onCanvasCreate = (canvasParam) => {
-    if (canvas) {
-      return;
-    }
-    canvas = canvasParam;
-    if (Platform.OS === "web") {
-      // canvas.width might be not equal canvas.clientWidth, so have to assign again
-      canvas.width = canvas.clientWidth;
-      canvas.height = canvas.clientHeight;
-    }
-    ctx = canvas.getContext("2d");
-  };
+const UniversalCanvas = React.memo((props: UniversalCanvasProps) => {
+  const {
+    onCanvasCreate,
+    onTouchStart,
+    onTouchMove,
+    onTouchEnd,
+    onMouseDown,
+    onMouseMove,
+    onMouseUp,
+    style,
+  } = props;
 
   return (
     <UniversalCanvasView
@@ -49,6 +36,6 @@ const UniversalCanvas = ({
       style={style}
     />
   );
-};
+});
 
 export default UniversalCanvas;
